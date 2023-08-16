@@ -1,0 +1,2 @@
+defmodule ExDocuSeal do
+end
