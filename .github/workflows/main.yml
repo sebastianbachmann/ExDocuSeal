@@ -22,8 +22,6 @@ jobs:
       with:
         elixir-version: '1.15.0'
         otp-version: '25'
-        env: 
-          IMAGE_OS: 'ubuntu20'
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
