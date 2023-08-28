@@ -14,7 +14,6 @@ on:
 env:
   MIX_ENV: test
 
-
 permissions:
   contents: read
 
@@ -37,6 +36,10 @@ jobs:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
+    - name: Create .env file
+      run: |
+        touch .env
+        echo X_AUTH_TOKEN=ALLYOURBASEAREBELONGTOUS >> .env
     - name: Install dependencies
       run: mix deps.get
     - name: Run tests
