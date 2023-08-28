@@ -10,8 +10,4 @@ config :logger, level: :info
 
 config :ex_docu_seal,
   env: Config.config_env(),
-  auth_token: System.get_env("TOKEN")
-
-# auth_token: ""
-# template_id: System.get_env("DOCUSEAL_TEMPLATE_ID"),
-# emails: System.get_env("DOCUSEAL_EMAILS") |> String.split(",")
+  auth_token: System.fetch_env!("X_AUTH_TOKEN")
